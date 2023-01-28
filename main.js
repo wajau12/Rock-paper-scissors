@@ -6,7 +6,7 @@ function getComputerChoice(){
     return choice[value];
 
 }
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
 
@@ -28,6 +28,43 @@ function playRound(playerSelection, computerSelection) {
     
     
 }
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+  //const playerSelection = "rock";
+  //const computerSelection = getComputerChoice();
+  //console.log(playRound(playerSelection, computerSelection));
+
+function game(){
+    let wins = 0;
+    let loss = 0;
+    let ties = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+        const playerSelection = prompt("Select either Rock, Paper or Scissors", " ");
+        
+        const computerSelection = getComputerChoice();
+
+        let result = playRound(playerSelection, computerSelection);
+
+        if (result.startsWith("You win! ")) {
+            wins++;
+            alert(result);
+            
+        }  else if (result.startsWith("You lose! ")){
+            loss++;
+            alert(result);
+           
+        } else {
+            ties++;
+            alert(result);
+            
+        }
+
+    }
+
+    console.log(`You won ${wins} rounds, lost ${loss} rounds, and tied ${ties} rounds.`);
+
+
+}
+console.log(game());
+   
+   
