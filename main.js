@@ -44,6 +44,8 @@ function game(){
         const computerSelection = getComputerChoice();
 
         let result = playRound(playerSelection, computerSelection);
+        
+        console.log(`Round ${i+1} : ${result}`);
 
         if (result.startsWith("You win! ")) {
             wins++;
@@ -62,6 +64,14 @@ function game(){
     }
 
     console.log(`You won ${wins} rounds, lost ${loss} rounds, and tied ${ties} rounds.`);
+
+    if (wins > loss){
+        return "You are the winner!";
+    }else if (loss > wins){
+        return "Computer wins";
+    }else {
+        return "It's a tie! Play again";
+    }
 
 
 }
